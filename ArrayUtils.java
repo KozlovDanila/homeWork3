@@ -1,7 +1,8 @@
 
 class ArrayUtils {
+ // просто проверка
 
-       public static int[] copyOf(int[] array, int newLenght) {
+    public static int[] copyOf(int[] array, int newLenght) {
         if (newLenght < 0) {
             return new int[0];
         }
@@ -81,5 +82,5 @@ class ArrayUtils {
         }
         return str;
     }
-	
+
 }
