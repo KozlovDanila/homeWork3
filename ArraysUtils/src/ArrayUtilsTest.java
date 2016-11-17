@@ -16,11 +16,6 @@ public class ArrayUtilsTest {
     }
 
     @Test
-    public void checkCopyOfWithNegativeValue() throws Exception {
-        Assert.assertArrayEquals(ArrayUtil.copyOf(new int[0], -5), new int[0]);
-    }
-
-    @Test
     public void checkCopyOfWithCorrectValueAndAddTail() throws Exception {
         Assert.assertArrayEquals(ArrayUtil.copyOf(new int[]{1, 5, 2}, 5), new int[]{1, 5, 2, 0, 0});
     }

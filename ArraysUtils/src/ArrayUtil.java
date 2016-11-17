@@ -43,7 +43,7 @@ class ArrayUtil {
         }
         Random random = new Random();
         for (int i = 0; i < array.length; ++i) {
-            swap(array, i, random.nextInt(array.length - 1));
+            swap(array, i, random.nextInt(array.length));
         }
     }
 
@@ -84,9 +84,5 @@ class ArrayUtil {
             }
         }
         return ret;
-    }
-
-    public static void main(String[] args) {
-        System.out.println(print(select(new int[]{1,2,-4,5,-1,3}, new EasyNumber())));
     }
 }
