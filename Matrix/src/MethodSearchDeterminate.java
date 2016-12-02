@@ -1,3 +1,3 @@
 public interface MethodSearchDeterminate {
-    double calculate(Matrix matrix);
+    double search(Matrix matrix);
 }

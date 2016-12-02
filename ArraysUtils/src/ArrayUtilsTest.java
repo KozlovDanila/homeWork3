@@ -27,17 +27,17 @@ public class ArrayUtilsTest {
 
     @Test
     public void checkCompareDifferentSize() throws Exception {
-        Assert.assertFalse(ArrayUtil.compare(new int[0], new int[]{1, 2, 3}));
+        Assert.assertFalse(ArrayUtil.equal(new int[0], new int[]{1, 2, 3}));
     }
 
     @Test
     public void checkCompareDifferentValues() throws Exception {
-        Assert.assertFalse(ArrayUtil.compare(new int[]{3, 2, 5}, new int[]{1, 2, 3}));
+        Assert.assertFalse(ArrayUtil.equal(new int[]{3, 2, 5}, new int[]{1, 2, 3}));
     }
 
     @Test
     public void checkCompareCorrectValues() throws Exception {
-        Assert.assertTrue(ArrayUtil.compare(new int[]{3, 2, 1}, new int[]{1, 2, 3}));
+        Assert.assertTrue(ArrayUtil.equal(new int[]{3, 2, 1}, new int[]{1, 2, 3}));
     }
 
     @Test
@@ -58,7 +58,7 @@ public class ArrayUtilsTest {
     public void checKMix() throws Exception {
         int[] a = new int[]{13, 2, 1, 5};
         ArrayUtil.mix(a);
-        Assert.assertTrue(ArrayUtil.compare(a, new int[]{13, 2, 1, 5}));
+        Assert.assertTrue(ArrayUtil.equal(a, new int[]{13, 2, 1, 5}));
     }
 
     @Test

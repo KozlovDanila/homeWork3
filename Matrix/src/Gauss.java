@@ -5,7 +5,7 @@ public class Gauss implements MethodSearchDeterminate {
     private Matrix tempMatrix;
 
     @Override
-    public double calculate(Matrix matrix) {
+    public double search(Matrix matrix) {
         tempMatrix = matrix.clone();
         convertElementsInZeroUnderDiagonal();
         return sumDiagonal();

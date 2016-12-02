@@ -1,3 +1,3 @@
 public interface Predicate {
-    boolean method(int bumber);
+    boolean apply(int bumber);
 }

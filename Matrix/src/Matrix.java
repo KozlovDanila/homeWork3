@@ -6,15 +6,10 @@ public class Matrix implements Cloneable {
     }
 
     Matrix(int height, int width) {
-        if (checkNegativeValue(height) || checkNegativeValue(width)) {
+        if (height < 0 || width < 0) {
             matrix = null;
         } else {
             this.matrix = new double[height][width];
-            for (int rowNumber = 0; rowNumber < height; ++rowNumber) {
-                for (int columnNumber = 0; columnNumber < width; ++columnNumber) {
-                    this.matrix[rowNumber][columnNumber] = 0.0;
-                }
-            }
         }
     }
 
@@ -55,7 +50,7 @@ public class Matrix implements Cloneable {
     }
 
     public Matrix multiply(Matrix right) {
-        if (this.isNull() || right.isNull()) {
+        if (this == null || right == null) {
             throw new IllegalArgumentException("Row of left matrix is null");
         }
         if (this.getColumnSize(0) != right.getRowSize()) {
@@ -94,16 +89,6 @@ public class Matrix implements Cloneable {
         return result;
     }
 
-    public double getDeterminant(MethodSearchDeterminate method) {
-        if (this.isNull()) {
-            throw new IllegalArgumentException("Is not a matrix");
-        }
-        if (this.checkSquar()) {
-            throw new IllegalArgumentException("Row not equal Column");
-        }
-        return method.calculate(this);
-    }
-
     @Override
     public Matrix clone() {
         Matrix clone = new Matrix();
@@ -127,10 +112,6 @@ public class Matrix implements Cloneable {
 
     }
 
-    private boolean isNull() {
-        return matrix == null;
-    }
-
     private boolean checkEqualSize(Matrix matrix) {
         for (int rowNumber = 0; rowNumber < this.getRowSize(); ++rowNumber) {
             if (getColumnSize(rowNumber) != matrix.getColumnSize(rowNumber)) {
@@ -140,7 +121,7 @@ public class Matrix implements Cloneable {
         return true;
     }
 
-    private boolean checkSquar() {
+    public boolean checkSquar() {
         if (this.checkCorrectMatrix()) {
             return false;
         }
@@ -150,7 +131,6 @@ public class Matrix implements Cloneable {
         }
         return true;
     }
-
 
 
     public boolean checkEqual(Matrix matrix) {
@@ -165,10 +145,6 @@ public class Matrix implements Cloneable {
             }
         }
         return true;
-    }
-
-    private static boolean checkNegativeValue(int value) {
-        return value < 0;
     }
 
     private boolean checkIlligalCoordinates(int rowNumber, int columnNumber) {

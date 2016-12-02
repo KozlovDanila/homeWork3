@@ -1,6 +1,6 @@
 public class NegativeValue implements Predicate {
     @Override
-    public boolean method(int number) {
+    public boolean apply(int number) {
         if (number < 0) {
             return true;
         }

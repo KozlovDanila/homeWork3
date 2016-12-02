@@ -1,6 +1,6 @@
-public class EasyNumber implements Predicate {
+public class PrimeNumber implements Predicate {
     @Override
-    public boolean method(int number) {
+    public boolean apply(int number) {
         if (number <= 1) {
             return false;
         }
